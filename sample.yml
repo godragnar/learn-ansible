@@ -1,0 +1,5 @@
+- name: sample
+  hosts: all
+  tasks:
+    - name: plugin
+      ansible.builtin.ping:
