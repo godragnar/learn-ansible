@@ -1,10 +1,28 @@
-- name : Demo on Loops
-  hosts : localhost
-  tasks :
-    - name : Loops
+#1srt Playbook
+- name: Loops
+  hosts: localhost
+  tasks:
+    - name: Demo on Loops
       ansible.builtin.debug:
-        msg : {{item}}
+         msg: {{item}}
+         loop :
+           -  Audi
+           -  Benz
+           -  Mercedes
+
+ ##2nd  Playbook on Loops  using MAP
+- name: Demo on Loops-Maps
+  hosts: localhost
+  vars:
+    cars:
+      - BMW
+      - Range Rover
+      - Rolls Royce
+  tasks:
+    - name: Loops
+      ansible.builtin.debug:
+        msg: Car Name - {{ item.name }},Car Price - {{ item.price }}
         loop :
-          - Audi
-          - BMW
-          - Mercedes
+          - { name: "BMW",price: 2000000}
+          - { name: "BMW",price: 2500000}
+          - { name: "RollsRoyce",price: 300000000}
