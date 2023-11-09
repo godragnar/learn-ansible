@@ -1,0 +1,12 @@
+#Demo on Condition and usage of "when"
+- name: Demo on Conditions
+  hosts: localhost
+  tasks:
+    - name: Demo on  Windows 10
+      ansible.builtin.debug:
+        msg : "Hello Windows10"
+        when: os_name="windows10"
+    - name: Demo on Linux'
+      ansible.builtin.debug:
+        msg: "Hello Linux"
+        when: os_name="linux"
