@@ -1,10 +1,10 @@
-- name: Demo on Error handling
+- name: Demo on Error Handling
   hosts: localhost
   tasks:
-    - name: Some shell command
+    - name: Some shell Command
       ansible.builtin.shell: lss
-      ignore_errors: yes
+      ignore_error: yes
 
-    - name: Print Hello
+    - name: Print hello
       ansible.builtin.debug:
-        msg: Hello
+        msg: hai
