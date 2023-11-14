@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: Handle the error
-      block :
+      block:
         - name: Print a message
           ansible.builtin.debug:
           msg: 'I execute Normally'
