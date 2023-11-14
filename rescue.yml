@@ -1,0 +1,19 @@
+- name: Demo on rescue
+  hosts: localhost
+  tasks:
+    - name: Handle the error
+      block :
+        - name: Print a message
+          ansible.builtin.debug:
+          msg: 'I execute Normally'
+
+        - name: Force a Failure
+          ansible.builtin.shell: /bin/false
+
+        - name: Never Print this
+          ansible.builtin.debug:
+            msg: 'I never execute,due to above tasks failing'
+      rescue:
+        - name: Print when error occurs
+          ansible.builtin.debug:
+            msg: 'I caught an error Please fix it'
