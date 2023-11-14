@@ -5,7 +5,7 @@
       block:
         - name: Print a message
           ansible.builtin.debug:
-          msg: 'I execute Normally'
+            msg: 'I execute Normally'
 
         - name: Force a Failure
           ansible.builtin.shell: /bin/false
